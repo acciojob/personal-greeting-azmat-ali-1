@@ -10,7 +10,7 @@ const App = () => {
     setName(event.target.value);
   };
   return (
-    <div>
+    <div id="main">
        <h2>Enter your name:</h2>
       <input type="text" value={name} onChange={handleNameChange} />
       <p>{name}</p>
