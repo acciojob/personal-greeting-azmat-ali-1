@@ -1,16 +1,19 @@
 
 import React from "react";
 import './../styles/App.css';
+import React, { useState } from 'react';
 
 const App = () => {
-  let i = document.getElementById("input");
-  let p = document.getElementById("para");
-  p.innerText = i.value;
+  const [name, setName] = useState('');
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
   return (
     <div>
-        <p>Enter your name:</p>
-        <input type="text" id= "input"></input>
-        <p id="para"></p>
+       <h2>Enter your name:</h2>
+      <input type="text" value={name} onChange={handleNameChange} />
+      <p>{name}</p>
     </div>
   )
 }
